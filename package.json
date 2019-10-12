@@ -1,0 +1,11 @@
+{
+  "name": "cryptonote_visualiser",
+  "version": "1.0.0",
+  "description": "A money generating visualiser for mining using cryptonote API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dreamhatx",
+  "license": "ISC"
+}
