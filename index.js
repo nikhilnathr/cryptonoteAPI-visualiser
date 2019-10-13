@@ -13,7 +13,7 @@ app.use('/', rootRouter);
 
 // Responds with 404 error. Use all routes before this.
 app.use((req, res, next) => {
-  notFoundError = { status: false, message: "Requested page was not found." };
+  notFoundError = { success: false, message: "Requested page was not found." };
   res.status(404).json(notFoundError);
 });
 
