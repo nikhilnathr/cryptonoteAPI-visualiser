@@ -1,22 +1,22 @@
-var express = require('express');
+const express = require('express');
 
 // Routers
 const rootRouter = require('./routes/root');
 
 const app = express();
 
-app.use(express.json({limit: "5kb"}));
+app.use(express.json({ limit: '5kb' }));
 app.use(express.urlencoded({ extended: false }));
 
 // Routing
 app.use('/', rootRouter);
 
 // Responds with 404 error. Use all routes before this.
-app.use((req, res, next) => {
-  notFoundError = { success: false, message: "Requested page was not found." };
+app.use((req, res) => {
+  const notFoundError = { success: false, message: 'Requested page was not found.' };
   res.status(404).json(notFoundError);
 });
 
-let port = process.env.PORT || 5672;
+const port = process.env.PORT || 5672;
 app.listen(port);
-console.log("server started at port " + port)
+console.log(`server started at port ${port}`);
